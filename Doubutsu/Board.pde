@@ -9,7 +9,6 @@ class Board {
     mArea[0] = new MochigomaArea(0,0,1,4);
     mArea[1] = new MochigomaArea(5,0,1,4);
   }
-
   void draw(){
     bArea.draw();
     mArea[0].draw();
@@ -17,3 +16,11 @@ class Board {
     iArea.draw();
   }
 }
+  void select(int x, int y){
+    AbstractKoma koma = komaList.getSelectedKoma();
+    if(koma==null){
+      komaList.select(x,y);
+    }else{
+      koma.kStat.selected=false;
+    }
+  }
